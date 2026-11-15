@@ -7,7 +7,7 @@
 <meta property="og:title" content="Elitrove">
 <meta property="og:description" content="Elitrove plans, builds and runs Facebook and Instagram ad campaigns for local service businesses.">
 <meta property="og:type" content="website">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Elitrove</title>
@@ -173,11 +173,44 @@
   /* CTA band */
   .cta-band{background:var(--forest);color:var(--on-forest);padding-block:0}
   .cta-band .wrap{padding-block:clamp(3rem,2rem + 4vw,5rem);text-align:center}
-  .cta-band h2{font-size:clamp(1.9rem,1.4rem + 2.4vw,3rem);color:var(--on-forest)}
+  .cta-band h2{font-size:clamp(1.9rem,1.4rem + 2.4vw,3rem);line-height:1.1;color:var(--on-forest)}
   .cta-band p{color:var(--on-forest-muted);max-width:50ch;margin:1rem auto 2rem;font-size:1.08rem}
   .cta-band .btn-primary{background:var(--on-forest);color:#183f2a}
   .cta-band .small{margin:1.3rem auto 0;font-size:.88rem}
   .cta-band .small strong{color:var(--on-forest)}
+
+  /* Call request calendar */
+  .cta-band .book-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,1rem + 4vw,4.5rem);align-items:start;text-align:left}
+  .cta-band .book-grid p{margin-left:0;margin-right:0}
+  .book-steps{list-style:none;padding:0;margin:0 0 2rem;display:grid;gap:.7rem;counter-reset:bs}
+  .book-steps li{counter-increment:bs;display:flex;gap:.8rem;align-items:baseline;color:var(--on-forest)}
+  .book-steps li::before{content:counter(bs);font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--on-forest-muted);min-width:1ch}
+  .book{background:color-mix(in srgb,var(--on-forest) 6%,transparent);border:1px solid color-mix(in srgb,var(--on-forest) 20%,transparent);border-radius:22px;padding:clamp(1.2rem,.8rem + 1.6vw,2rem);min-width:0}
+  .book h3{font-size:1.45rem;color:var(--on-forest);margin-bottom:1.2rem}
+  .book fieldset{border:0;padding:0;margin:0 0 1.3rem;min-width:0}
+  .book legend{padding:0;margin-bottom:.6rem;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--on-forest-muted)}
+  .days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.45rem}
+  .times{display:grid;grid-template-columns:repeat(auto-fill,minmax(5.4rem,1fr));gap:.45rem}
+  .pick{font:inherit;color:var(--on-forest);background:transparent;border:1px solid color-mix(in srgb,var(--on-forest) 28%,transparent);border-radius:12px;padding:.55rem .3rem;cursor:pointer;display:grid;gap:.1rem;justify-items:center;line-height:1.2;transition:background .15s,border-color .15s,transform .15s}
+  .pick b{font-weight:600;font-size:.95rem}
+  .pick span{font-size:.76rem;color:var(--on-forest-muted)}
+  .pick:hover{border-color:var(--on-forest);transform:translateY(-1px)}
+  .pick[aria-pressed="true"]{background:var(--on-forest);border-color:var(--on-forest);color:#183f2a}
+  .pick[aria-pressed="true"] span{color:#2b5a3f}
+  .pick:focus-visible,.book input:focus-visible,.book textarea:focus-visible{outline:2px solid var(--on-forest);outline-offset:2px}
+  .cta-band .book .book-empty{grid-column:1/-1;font-size:.95rem;margin:0}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  .fields label{display:grid;gap:.3rem;font-size:.82rem;color:var(--on-forest-muted)}
+  .fields label.full{grid-column:1/-1}
+  .book input,.book textarea{font:inherit;font-size:1rem;color:var(--on-forest);background:color-mix(in srgb,var(--on-forest) 5%,transparent);border:1px solid color-mix(in srgb,var(--on-forest) 28%,transparent);border-radius:10px;padding:.65rem .8rem;width:100%;min-width:0}
+  .book input::placeholder{color:color-mix(in srgb,var(--on-forest-muted) 70%,transparent)}
+  .book textarea{margin-top:.9rem;min-height:9.5rem;resize:vertical;font-size:.9rem;line-height:1.45}
+  .cta-band .book .book-summary{font-family:var(--serif);font-size:1.15rem;color:var(--on-forest);margin:0 0 1rem;max-width:none}
+  .book-actions{display:flex;flex-wrap:wrap;gap:.6rem}
+  .cta-band .book .btn-ghost{color:var(--on-forest);border-color:color-mix(in srgb,var(--on-forest) 40%,transparent)}
+  .cta-band .book .btn-ghost:hover{border-color:var(--on-forest);color:var(--on-forest)}
+  .cta-band .book .book-status{font-size:.92rem;color:var(--on-forest);margin:.9rem 0 0;max-width:none;min-height:1.2em}
+  .cta-band .book .book-note{font-size:.82rem;margin:.9rem 0 0;max-width:none}
 
   /* Footer */
   footer{background:var(--surface);border-top:1px solid var(--line)}
@@ -192,6 +225,7 @@
   .copyright{color:var(--muted);font-size:.8rem;width:100%;border-top:1px solid var(--line);padding-top:1.3rem}
 
   @media (max-width:900px){
+    .cta-band .book-grid{grid-template-columns:1fr}
     .steps{grid-template-columns:repeat(2,1fr)}
     .card,.card.wide{grid-column:span 3}
   }
@@ -207,6 +241,7 @@
     .reel{scroll-snap-align:start}
   }
   @media (max-width:480px){
+    .fields{grid-template-columns:1fr}
     .steps{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
@@ -427,11 +462,45 @@
   </section>
 
   <section id="contact" class="cta-band" aria-labelledby="contact-h">
-    <div class="wrap">
-      <h2 id="contact-h">Want more booked jobs from your ads?</h2>
-      <p>Message us and we will set up a short Zoom call. We look at what you run now and tell you straight if we can help.</p>
-      <a class="btn btn-primary" href="https://www.instagram.com/elitrove" target="_blank" rel="noopener">Message us on Instagram</a>
-      <p class="small">Send <strong>CALL</strong> to <strong>@elitrove</strong> and we will find a time.</p>
+    <div class="wrap book-grid">
+      <div>
+        <h2 id="contact-h">Want more booked jobs from your ads?</h2>
+        <p>Pick a time for a short Zoom call. We look at what you run now and tell you straight if we can help.</p>
+        <ol class="book-steps">
+          <li>Pick a day and a time that suits you.</li>
+          <li>Send the request by email or Instagram.</li>
+          <li>We confirm and send you the Zoom link.</li>
+        </ol>
+        <a class="btn btn-primary" href="https://www.instagram.com/elitrove" target="_blank" rel="noopener">Message us on Instagram</a>
+        <p class="small">Or just send <strong>CALL</strong> to <strong>@elitrove</strong> and we will find a time.</p>
+      </div>
+      <div class="book" id="booking" data-email="krkoskasimon15@gmail.com" hidden>
+        <h3>Request a call</h3>
+        <fieldset>
+          <legend>1. Day</legend>
+          <div class="days"></div>
+        </fieldset>
+        <fieldset>
+          <legend>2. Time, in Central Time (Texas)</legend>
+          <div class="times"></div>
+        </fieldset>
+        <fieldset>
+          <legend>3. About you</legend>
+          <div class="fields">
+            <label>Your name<input name="name" type="text" maxlength="80" autocomplete="name" placeholder="Dan"></label>
+            <label>Business<input name="business" type="text" maxlength="80" autocomplete="organization" placeholder="Dan's Roofing"></label>
+            <label class="full">Instagram or phone, so we can confirm<input name="contact" type="text" maxlength="80" placeholder="@yourbusiness or your number"></label>
+          </div>
+        </fieldset>
+        <p class="book-summary" aria-live="polite"></p>
+        <div class="book-actions">
+          <button class="btn btn-primary book-email" type="button">Send request by email</button>
+          <button class="btn btn-ghost book-instagram" type="button">Copy and open Instagram</button>
+        </div>
+        <p class="book-status" role="status"></p>
+        <textarea class="book-text" readonly hidden aria-label="Your call request, ready to copy"></textarea>
+        <p class="book-note">This is a request, not a confirmed booking. We reply to confirm and send the Zoom link. This site does not store or send what you type. Your request goes out from your own email or Instagram.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -452,5 +521,6 @@
     <div class="copyright">© 2026 Elitrove. Figures on this page are general industry ranges, not our results or a guarantee. This site sets no cookies and runs no trackers.</div>
   </div>
 </footer>
+<script src="booking.js" defer></script>
 </body>
 </html>
