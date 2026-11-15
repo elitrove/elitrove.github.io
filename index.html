@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Elitrove plans, builds and runs Facebook and Instagram ad campaigns for landscapers and local service businesses.">
+<meta property="og:title" content="Elitrove">
+<meta property="og:description" content="Elitrove plans, builds and runs Facebook and Instagram ad campaigns for landscapers and local service businesses.">
+<meta property="og:type" content="website">
+<style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Elitrove</title>
+<link rel="stylesheet" href="fontface.css">
+<style>
+  /* Direction: light-luxury editorial. Warm paper, ink, one deep-green family.
+     Hero with a real reel in a phone frame, bento services, numbered process,
+     real work stills, honest FAQ, forest CTA band. */
+  :root{
+    --paper:#f5f3ec;
+    --surface:#fffefb;
+    --ink:#16201a;
+    --muted:#586459;
+    --line:#e4e2d7;
+    --forest:#183f2a;
+    --green:#2b7f4f;
+    --green-soft:#e6efe7;
+    --on-forest:#f4f8f1;
+    --on-forest-muted:#bcd2c0;
+    --shadow:rgba(20,40,28,.45);
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --maxw:1140px;
+    --gutter:max(20px,env(safe-area-inset-left,0px));
+    --gutter-r:max(20px,env(safe-area-inset-right,0px));
+    --sec:clamp(3.2rem,2rem + 5vw,6rem);
+  }
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+    --paper:#0f130f;--surface:#161c16;--ink:#e9ede4;--muted:#9aa89b;--line:#28311f;
+    --forest:#0c1a12;--green:#5fc187;--green-soft:#17251b;
+    --on-forest:#f4f8f1;--on-forest-muted:#a9c1ad;--shadow:rgba(0,0,0,.6);
+    color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#0f130f;--surface:#161c16;--ink:#e9ede4;--muted:#9aa89b;--line:#28311f;
+    --forest:#0c1a12;--green:#5fc187;--green-soft:#17251b;
+    --on-forest:#f4f8f1;--on-forest-muted:#a9c1ad;--shadow:rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--surface)}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;text-wrap:balance;margin:0}
+  p{margin:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+  section{padding-block:var(--sec)}
+  [id]{scroll-margin-top:84px}
+
+  /* Header */
+  header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--surface) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hdr{display:flex;align-items:center;justify-content:space-between;padding-block:14px;gap:16px}
+  .mark{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none}
+  .mark b{color:var(--green);font-weight:600}
+  nav{display:flex;align-items:center;gap:26px}
+  .nav-links{display:flex;gap:26px}
+  .nav-links a{font-size:.92rem;color:var(--muted);text-decoration:none;transition:color .18s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{font-family:var(--sans);font-weight:600;font-size:.92rem;border:none;border-radius:999px;padding:.72em 1.35em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5em;transition:transform .15s,box-shadow .2s,border-color .2s,color .2s}
+  .btn-primary{background:var(--forest);color:var(--on-forest)}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 22px -10px var(--shadow)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn-primary{background:var(--green);color:#07130c}}
+  :root[data-theme="dark"] .btn-primary{background:var(--green);color:#07130c}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--green);color:var(--green)}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:6px}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.8rem;font-weight:600;color:var(--green);margin-bottom:1.1rem}
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--green)}
+  .sec-head{max-width:48ch;margin-bottom:2.4rem}
+  .sec-head h2{font-size:clamp(1.8rem,1.3rem + 2.2vw,2.8rem);line-height:1.08}
+  .sec-head p{color:var(--muted);margin-top:.9rem;font-size:1.05rem}
+
+  /* Hero */
+  .hero{padding-block:clamp(2.6rem,2rem + 5vw,5.5rem) clamp(2.6rem,2rem + 4vw,4.5rem);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,1rem + 4vw,4.5rem);align-items:center}
+  .hero-grid > *{min-width:0}
+  h1{font-size:clamp(2.5rem,1.6rem + 4.4vw,4.5rem);line-height:1.02}
+  h1 em{font-style:italic;color:var(--green)}
+  .lead{font-size:clamp(1.05rem,1rem + .5vw,1.28rem);color:var(--muted);max-width:42ch;margin:1.4rem 0 2rem}
+  .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+  .hero-note{font-size:.85rem;color:var(--muted);margin-top:1.3rem}
+
+  .stage{position:relative;justify-self:center;width:min(100%,300px);padding:0 0 34px}
+  .phone{aspect-ratio:9/16;border-radius:30px;border:7px solid var(--ink);background:var(--ink);overflow:hidden;box-shadow:0 40px 70px -40px var(--shadow);transform:rotate(2.5deg)}
+  .phone img{width:100%;height:100%;object-fit:cover}
+  .chip{position:absolute;left:-34px;bottom:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:.9rem 1.05rem;box-shadow:0 24px 40px -28px var(--shadow);max-width:230px}
+  .chip .tag{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .chip ul{list-style:none;margin:.5rem 0 0;padding:0;font-size:.86rem;display:grid;gap:.25rem}
+  .chip li{display:flex;gap:.5rem;align-items:baseline}
+  .chip li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);flex:none;transform:translateY(-1px)}
+
+  /* Positioning strip */
+  .strip{border-block:1px solid var(--line);background:var(--surface);padding-block:0}
+  .strip .wrap{display:flex;gap:clamp(1.5rem,1rem + 3vw,4rem);align-items:center;padding-block:1.8rem;flex-wrap:wrap}
+  .strip .big{font-family:var(--serif);font-size:clamp(1.3rem,1rem + 1.6vw,1.9rem);font-weight:500;line-height:1.25;flex:1 1 320px;min-width:0}
+  .strip .big em{font-style:normal;color:var(--green)}
+  .strip .aside{flex:0 1 320px;color:var(--muted);font-size:.95rem;min-width:0}
+
+  /* Services bento */
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.5rem;min-width:0;grid-column:span 2;transition:transform .2s,border-color .2s}
+  .card:hover{transform:translateY(-3px);border-color:var(--green)}
+  .card.wide{grid-column:span 3;padding:1.9rem}
+  .card .num{font-family:var(--serif);font-size:.95rem;color:var(--green);font-weight:600}
+  .card h3{font-size:1.25rem;margin:.55rem 0 .5rem}
+  .card.wide h3{font-size:1.55rem}
+  .card p{color:var(--muted);font-size:.95rem}
+  .card ul{margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.4rem;font-size:.92rem}
+  .card li{padding-left:1.1rem;position:relative}
+  .card li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1.5px;background:var(--green)}
+
+  /* Jobs band */
+  .jobs{margin-top:1.4rem;background:var(--green-soft);border-radius:18px;padding:1.4rem 1.5rem;display:flex;gap:1rem 1.6rem;align-items:center;flex-wrap:wrap}
+  .jobs strong{font-family:var(--serif);font-weight:500;font-size:1.1rem;flex:0 0 auto}
+  .pills{display:flex;gap:.5rem;flex-wrap:wrap;min-width:0}
+  .pills span{font-size:.85rem;border:1px solid color-mix(in srgb,var(--green) 40%,transparent);color:var(--ink);border-radius:999px;padding:.3em .85em;background:var(--surface)}
+
+  /* Process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.2rem,1rem + 1.2vw,2rem);counter-reset:step;list-style:none;margin:0;padding:0}
+  .step{min-width:0;border-top:1.5px solid var(--ink);padding-top:1.1rem;counter-increment:step}
+  .step::before{content:counter(step,decimal-leading-zero);font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--green);display:block;margin-bottom:.8rem}
+  .step h3{font-size:1.2rem;margin-bottom:.45rem}
+  .step p{color:var(--muted);font-size:.95rem}
+
+  /* Work */
+  .work{background:var(--surface);border-block:1px solid var(--line)}
+  .reels{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,.6rem + 2vw,2rem)}
+  .reel{min-width:0;margin:0}
+  .reel .frame{aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--ink)}
+  .reel img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .reel:hover img{transform:scale(1.04)}
+  .reel figcaption{margin-top:.8rem;font-size:.92rem}
+  .reel figcaption b{display:block;font-family:var(--serif);font-weight:500;font-size:1.08rem}
+  .reel figcaption span{color:var(--muted)}
+  .work-note{margin-top:1.8rem;display:flex;gap:1rem 1.4rem;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+  .work-note p{flex:1 1 320px;min-width:0}
+
+  /* FAQ */
+  .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.5rem,1rem + 3vw,4rem);align-items:start}
+  .faq-grid > *{min-width:0}
+  .faq-grid .sec-head{margin-bottom:0;position:sticky;top:100px}
+  details{border-top:1px solid var(--line)}
+  details:last-child{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.1rem 0;font-family:var(--serif);font-size:1.15rem;font-weight:500}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--sans);font-size:1.3rem;color:var(--green);flex:none;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{color:var(--muted);padding:0 2rem 1.2rem 0;max-width:62ch}
+
+  /* CTA band */
+  .cta-band{background:var(--forest);color:var(--on-forest);padding-block:0}
+  .cta-band .wrap{padding-block:clamp(3rem,2rem + 4vw,5rem);text-align:center}
+  .cta-band h2{font-size:clamp(1.9rem,1.4rem + 2.4vw,3rem);color:var(--on-forest)}
+  .cta-band p{color:var(--on-forest-muted);max-width:50ch;margin:1rem auto 2rem;font-size:1.08rem}
+  .cta-band .btn-primary{background:var(--on-forest);color:#183f2a}
+  .cta-band .small{margin:1.3rem auto 0;font-size:.88rem}
+  .cta-band .small strong{color:var(--on-forest)}
+
+  /* Footer */
+  footer{background:var(--surface);border-top:1px solid var(--line)}
+  footer .wrap{padding-block:2.4rem 2rem;display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:flex-start}
+  footer p{color:var(--muted);font-size:.9rem;margin-top:.6rem;max-width:36ch}
+  .footlinks{display:flex;gap:1.5rem;flex-wrap:wrap}
+  .footlinks a{color:var(--muted);text-decoration:none;font-size:.92rem}
+  .footlinks a:hover{color:var(--green)}
+  .legal{color:var(--muted);font-size:.88rem;width:100%;overflow-wrap:anywhere}
+  .legal a{color:inherit;text-underline-offset:3px}
+  .legal a:hover{color:var(--green)}
+  .copyright{color:var(--muted);font-size:.8rem;width:100%;border-top:1px solid var(--line);padding-top:1.3rem}
+
+  @media (max-width:900px){
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .card,.card.wide{grid-column:span 3}
+  }
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;gap:2.6rem}
+    .stage{width:min(72%,260px)}
+    .chip{left:-22px}
+    .nav-links{display:none}
+    .card,.card.wide{grid-column:span 6}
+    .faq-grid{grid-template-columns:1fr}
+    .faq-grid .sec-head{position:static}
+    .reels{grid-template-columns:repeat(3,minmax(190px,1fr));overflow-x:auto;padding-bottom:.6rem;scroll-snap-type:x mandatory}
+    .reel{scroll-snap-align:start}
+  }
+  @media (max-width:480px){
+    .steps{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a class="mark" href="#top" aria-label="Elitrove home">elit<b>rove</b></a>
+    <nav aria-label="Main navigation">
+      <span class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#work">Our work</a>
+        <a href="#faq">Questions</a>
+      </span>
+      <a class="btn btn-primary" href="#contact">Get a free audit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Facebook and Instagram ads for landscapers</span>
+        <h1 id="hero-h">Booked jobs, not just <em>cheap leads.</em></h1>
+        <p class="lead">Elitrove plans, builds and runs Meta ad campaigns for landscapers and local service businesses. We make the ads, the page they land on and the follow-up, and we report on what it costs to win a customer.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Get a free audit</a>
+          <a class="btn btn-ghost" href="#services">See what we do</a>
+        </div>
+        <p class="hero-note">No retainer to start. The audit is free and yours to keep.</p>
+      </div>
+
+      <div class="stage">
+        <div class="phone">
+          <img src="img/reel-garden.jpg" width="360" height="640" alt="Still from an Elitrove video ad: a gardener watering plants with the caption 'Run your ads before the busy season, not during it.'" fetchpriority="high">
+        </div>
+        <aside class="chip" aria-label="What you see every week">
+          <span class="tag">Your weekly report</span>
+          <ul>
+            <li>Ad spend</li>
+            <li>Leads and cost per lead</li>
+            <li>Jobs booked</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <p class="big">Landscaping is a <em>visual transformation</em>. Meta is where before-and-afters sell.</p>
+      <p class="aside">Google wins for emergencies people search for. For work people see and want, a scroll-stopping video does the selling. That is where we focus.</p>
+    </div>
+  </div>
+
+  <section id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What we do</span>
+        <h2 id="services-h">Everything between a stranger scrolling and a job on your calendar.</h2>
+        <p>One small team does all of it, so the ad, the page and the follow-up tell the same story.</p>
+      </div>
+
+      <div class="bento">
+        <article class="card wide">
+          <span class="num">01</span>
+          <h3>Meta ad campaigns</h3>
+          <p>Real campaigns in Ads Manager, not boosted posts.</p>
+          <ul>
+            <li>Campaign structure and budget plan</li>
+            <li>Targeting pinned to your service area</li>
+            <li>Lead forms that ask the right questions</li>
+            <li>Several ads per offer, so the data picks the winner</li>
+          </ul>
+        </article>
+        <article class="card wide">
+          <span class="num">02</span>
+          <h3>Ad creative</h3>
+          <p>The part people actually see. We make it in house.</p>
+          <ul>
+            <li>Short video ads with voiceover and captions</li>
+            <li>Before-and-after image ads from your job photos</li>
+            <li>Ad copy with different hooks to test</li>
+            <li>Reels for your own Instagram page</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>Offer</h3>
+          <p>A reason to act now: a free check, a seasonal deal, a clear price. We shape it with you before any ad runs.</p>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3>Landing pages</h3>
+          <p>One page, one offer, one button. Built to load fast on a phone, and checked for security and privacy basics before it goes live.</p>
+        </article>
+        <article class="card">
+          <span class="num">05</span>
+          <h3>Lead follow-up</h3>
+          <p>Reply scripts and a simple routine so a new lead hears back in minutes, while they still care.</p>
+        </article>
+      </div>
+
+      <div class="jobs">
+        <strong>Jobs worth advertising</strong>
+        <div class="pills">
+          <span>Garden makeovers</span>
+          <span>Lawn care plans</span>
+          <span>Hedge and tree work</span>
+          <span>Patios and paving</span>
+          <span>Seasonal clean-ups</span>
+          <span>Turf and irrigation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" aria-labelledby="process-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How it works</span>
+        <h2 id="process-h">Four steps from first message to booked work.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3>Free audit</h3>
+          <p>We look at your page, your offer and any ads you run now, and show you where jobs are leaking out.</p>
+        </li>
+        <li class="step">
+          <h3>Offer and creative</h3>
+          <p>We agree on one offer for one service area, then make the video and image ads around it.</p>
+        </li>
+        <li class="step">
+          <h3>Launch</h3>
+          <p>The campaign goes live with a lead form or landing page, and your follow-up routine is ready before the first lead arrives.</p>
+        </li>
+        <li class="step">
+          <h3>Report and scale</h3>
+          <p>Every week you see spend, leads and booked jobs. Budget moves to the ads that bring work.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="work" class="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Our work</span>
+        <h2 id="work-h">Video ads we made this month.</h2>
+        <p>Stills from reels on our own Instagram. Same format we build for clients: real footage, a clear voice, captions you can read with the sound off.</p>
+      </div>
+      <div class="reels">
+        <figure class="reel">
+          <div class="frame"><img src="img/reel-mower.jpg" width="360" height="640" loading="lazy" alt="Reel still: a landscaper on a ride-on mower, caption 'A ten second clip of your work beats a stock photo.'"></div>
+          <figcaption><b>Show the real work</b><span>Why a phone clip beats a stock photo</span></figcaption>
+        </figure>
+        <figure class="reel">
+          <div class="frame"><img src="img/reel-area.jpg" width="360" height="640" loading="lazy" alt="Reel still: aerial view of a neighbourhood, caption 'Homeowners, in your area, who actually hire you.'"></div>
+          <figcaption><b>Pick who sees it</b><span>Boosting versus a real campaign</span></figcaption>
+        </figure>
+        <figure class="reel">
+          <div class="frame"><img src="img/reel-reviews.jpg" width="360" height="640" loading="lazy" alt="Reel still: a man on the phone, caption 'Your reviews are the best ad you're not running.'"></div>
+          <figcaption><b>Reviews as ads</b><span>Turning five-star reviews into creative</span></figcaption>
+        </figure>
+      </div>
+      <div class="work-note">
+        <p>Client campaigns will be added here as they finish. Until then, judge us on the work itself.</p>
+        <a class="btn btn-ghost" href="https://www.instagram.com/elitrove" target="_blank" rel="noopener">Watch them on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-h">
+    <div class="wrap faq-grid">
+      <div class="sec-head">
+        <span class="eyebrow">Straight answers</span>
+        <h2 id="faq-h">Questions landscapers ask us.</h2>
+        <p>If yours is not here, message us. A person replies.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>Do you have case studies?</summary>
+          <p>Not yet. Elitrove is a new agency, and we will not show you made-up numbers or borrowed testimonials. What we can show is the work: the ads, the videos and this site. That is also why the audit is free.</p>
+        </details>
+        <details>
+          <summary>How much ad budget do I need?</summary>
+          <p>Most local campaigns can start at around €10 to €20 a day. What matters more than size is focus: one offer, one service area. You pay the ad spend straight to Meta.</p>
+        </details>
+        <details>
+          <summary>What should a lead cost?</summary>
+          <p>Home-service leads from Meta often land somewhere around €26 to €50. That is a general industry range, not our result and not a promise. Your offer, your area and how fast you reply all move it.</p>
+        </details>
+        <details>
+          <summary>What does it cost to work with you?</summary>
+          <p>The audit is free and there is no retainer to start. If it looks like a fit, you get a clear price before any work begins.</p>
+        </details>
+        <details>
+          <summary>What do you need from me?</summary>
+          <p>Photos or short phone clips of real jobs, your service area, the jobs you want more of, and someone who answers new leads quickly.</p>
+        </details>
+        <details>
+          <summary>Are the pages you build safe and privacy-friendly?</summary>
+          <p>We keep them simple on purpose. No passwords or keys in the page code, HTTPS only, and no tracking cookies unless the campaign needs them. If a page does use tracking, such as the Meta pixel, visitors get a clear choice to accept or refuse first. This site itself sets no cookies and loads nothing from third parties.</p>
+        </details>
+        <details>
+          <summary>Do you only work with landscapers?</summary>
+          <p>Landscapers first, because the work is visual and sells well on Facebook and Instagram. The same setup fits other local services people can see, like paving, fencing and cleaning.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta-band" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">See where you are leaving jobs on the table.</h2>
+      <p>Send us a message and we will put together a free audit of your offer, your page and your ads. No retainer, no pressure.</p>
+      <a class="btn btn-primary" href="https://www.instagram.com/elitrove" target="_blank" rel="noopener">Message us on Instagram</a>
+      <p class="small">Send <strong>AUDIT</strong> to <strong>@elitrove</strong> and we will take it from there.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <span class="mark">elit<b>rove</b></span>
+      <p>Facebook and Instagram ad campaigns for landscapers and local service businesses.</p>
+    </div>
+    <div class="footlinks">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="https://www.instagram.com/elitrove" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://docs.google.com/document/d/1y-JPKmjZfOBtO-IfnIWAzIqock-Z5VTsFJcGVOmagig/edit" target="_blank" rel="noopener">Privacy Policy</a>
+    </div>
+    <div class="legal">Elitrove is run by Šimon Krkoška. Contact: <a href="mailto:krkoskasimon15@gmail.com">krkoskasimon15@gmail.com</a></div>
+    <div class="copyright">© 2026 Elitrove. Figures on this page are general industry ranges, not our results or a guarantee. This site sets no cookies and runs no trackers.</div>
+  </div>
+</footer>
+</body>
+</html>
