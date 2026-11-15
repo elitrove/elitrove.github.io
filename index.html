@@ -11,7 +11,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Elitrove</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fontface.css">
 <style>
@@ -68,8 +68,9 @@
   /* Header */
   header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--surface) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .hdr{display:flex;align-items:center;justify-content:space-between;padding-block:14px;gap:16px}
-  .mark{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none}
-  .mark .gem{height:1.55rem;width:auto;flex:none}
+  .mark{display:inline-block;font-family:var(--serif);font-weight:600;font-size:1.7rem;letter-spacing:-.012em;line-height:1.1;text-decoration:none}
+  .mark .i{position:relative;display:inline-block}
+  .mark .gem{position:absolute;left:50%;top:.06em;width:.3em;height:auto;transform:translateX(-50%)}
   .gem polygon{stroke-width:12;stroke-linejoin:round}
   .gem .g1{fill:var(--logo-1);stroke:var(--logo-1)} .gem .g2{fill:var(--logo-2);stroke:var(--logo-2)}
   .gem .g3{fill:var(--logo-3);stroke:var(--logo-3)} .gem .g4{fill:var(--logo-4);stroke:var(--logo-4)}
@@ -214,7 +215,7 @@
 <body>
 <header>
   <div class="wrap hdr">
-    <a class="mark" href="#top" aria-label="Elitrove home"><svg class="gem" viewBox="76 58 360 424" aria-hidden="true" focusable="false"><polygon class="g1" points="168.0,70.0 205.8,70.0 169.8,160.0 88.0,160.0"/><polygon class="g1" points="238.2,70.0 273.8,70.0 309.8,160.0 202.2,160.0"/><polygon class="g1" points="306.2,70.0 344.0,70.0 424.0,160.0 342.2,160.0"/><polygon class="g2" points="104.3,190.0 407.7,190.0 363.3,272.0 148.7,272.0"/><polygon class="g3" points="165.0,302.0 347.0,302.0 306.9,376.0 205.1,376.0"/><polygon class="g4" points="221.3,406.0 290.7,406.0 256.0,470.0"/></svg>elitrove</a>
+    <a class="mark" href="#top" aria-label="Elitrove home">el<span class="i">ı<svg class="gem" viewBox="76 58 360 424" aria-hidden="true" focusable="false"><polygon class="g1" points="168.0,70.0 205.8,70.0 169.8,160.0 88.0,160.0"/><polygon class="g1" points="238.2,70.0 273.8,70.0 309.8,160.0 202.2,160.0"/><polygon class="g1" points="306.2,70.0 344.0,70.0 424.0,160.0 342.2,160.0"/><polygon class="g2" points="104.3,190.0 407.7,190.0 363.3,272.0 148.7,272.0"/><polygon class="g3" points="165.0,302.0 347.0,302.0 306.9,376.0 205.1,376.0"/><polygon class="g4" points="221.3,406.0 290.7,406.0 256.0,470.0"/></svg></span>trove</a>
     <nav aria-label="Main navigation">
       <span class="nav-links">
         <a href="#services">Services</a>
@@ -438,7 +439,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <span class="mark"><svg class="gem" viewBox="76 58 360 424" aria-hidden="true" focusable="false"><polygon class="g1" points="168.0,70.0 205.8,70.0 169.8,160.0 88.0,160.0"/><polygon class="g1" points="238.2,70.0 273.8,70.0 309.8,160.0 202.2,160.0"/><polygon class="g1" points="306.2,70.0 344.0,70.0 424.0,160.0 342.2,160.0"/><polygon class="g2" points="104.3,190.0 407.7,190.0 363.3,272.0 148.7,272.0"/><polygon class="g3" points="165.0,302.0 347.0,302.0 306.9,376.0 205.1,376.0"/><polygon class="g4" points="221.3,406.0 290.7,406.0 256.0,470.0"/></svg>elitrove</span>
+      <span class="mark" role="img" aria-label="Elitrove">el<span class="i">ı<svg class="gem" viewBox="76 58 360 424" aria-hidden="true" focusable="false"><polygon class="g1" points="168.0,70.0 205.8,70.0 169.8,160.0 88.0,160.0"/><polygon class="g1" points="238.2,70.0 273.8,70.0 309.8,160.0 202.2,160.0"/><polygon class="g1" points="306.2,70.0 344.0,70.0 424.0,160.0 342.2,160.0"/><polygon class="g2" points="104.3,190.0 407.7,190.0 363.3,272.0 148.7,272.0"/><polygon class="g3" points="165.0,302.0 347.0,302.0 306.9,376.0 205.1,376.0"/><polygon class="g4" points="221.3,406.0 290.7,406.0 256.0,470.0"/></svg></span>trove</span>
       <p>Facebook and Instagram ad campaigns for local service businesses.</p>
     </div>
     <div class="footlinks">
