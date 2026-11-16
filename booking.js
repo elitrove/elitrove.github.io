@@ -8,7 +8,7 @@
   var CONFIG = Object.freeze({
     timeZone: 'America/Chicago',
     zoneLabel: 'Central Time',
-    startHour: 9,        // first call starts 9:00 AM Central
+    startHour: 7,        // first call starts 7:00 AM Central
     endHour: 15,         // last call starts 2:30 PM Central
     slotMinutes: 30,
     daysAhead: 10,       // weekdays shown
@@ -251,7 +251,7 @@
     module.exports = {
       zonedParts: zonedParts, zonedToUtc: zonedToUtc, nextBusinessDays: nextBusinessDays,
       slotsForDay: slotsForDay, describeSlot: describeSlot, cleanField: cleanField,
-      missingFields: missingFields, buildRequest: buildRequest
+      missingFields: missingFields, buildRequest: buildRequest, config: CONFIG
     };
     return;
   }
