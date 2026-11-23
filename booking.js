@@ -1,7 +1,9 @@
 /* Call request calendar for the Elitrove website.
    A visitor picks a day and time, and the page writes a request that the
    visitor sends by email or Instagram. Nothing is stored or sent by the site.
-   To change the hours offered, edit CONFIG below. Times are Central Time. */
+   To change the hours offered, edit CONFIG below. CONFIG hours are Central Time.
+   Visitors see each time in their own time zone. The request also states Central
+   Time so Elitrove reads every request the same way. */
 (function () {
   'use strict';
 
@@ -103,6 +105,7 @@
       "Hi Elitrove, I'd like to book a call.",
       '',
       'Time: ' + describeSlot(entry.slotUtc, config.timeZone) + ' ' + config.zoneLabel,
+      'My time: ' + describeSlot(entry.slotUtc, entry.visitorZone) + ' (' + entry.visitorZone + ')',
       'Name: ' + entry.name,
       'Business: ' + (entry.business || 'not given'),
       'Reach me at: ' + entry.contact,
@@ -159,7 +162,7 @@
     var summary = root.querySelector('.book-summary');
     var status = root.querySelector('.book-status');
     var textBox = root.querySelector('.book-text');
-    var visitorZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    var visitorZone = Intl.DateTimeFormat().resolvedOptions().timeZone || CONFIG.timeZone;
     var chosenSlot = null;
 
     function field(name) {
@@ -167,15 +170,12 @@
     }
 
     function entry() {
-      return { slotUtc: chosenSlot, name: field('name'), business: field('business'), contact: field('contact') };
+      return { slotUtc: chosenSlot, visitorZone: visitorZone, name: field('name'), business: field('business'), contact: field('contact') };
     }
 
     function showSummary() {
       if (!chosenSlot) { summary.textContent = 'Pick a day, then a time.'; return; }
-      var text = describeSlot(chosenSlot, CONFIG.timeZone) + ' ' + CONFIG.zoneLabel;
-      var local = timeOnly(chosenSlot, visitorZone);
-      if (local !== timeOnly(chosenSlot, CONFIG.timeZone)) { text += ' (' + local + ' your time)'; }
-      summary.textContent = text;
+      summary.textContent = describeSlot(chosenSlot, visitorZone) + ' your time';
     }
 
     function showTimes(day) {
@@ -189,7 +189,7 @@
         timeGroup.appendChild(none);
       }
       slots.forEach(function (slot) {
-        timeGroup.appendChild(makePick(timeOnly(slot.utc, CONFIG.timeZone), '', function (button) {
+        timeGroup.appendChild(makePick(timeOnly(slot.utc, visitorZone), '', function (button) {
           chosenSlot = slot.utc;
           press(timeGroup, button);
           showSummary();
